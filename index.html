@@ -1,0 +1,97 @@
+<html><head><link href="../src/index.css" type="text/css" rel="stylesheet"></head><body style="--primary:#70a3c7"><div><!-- 2023-05-22T12:30:10.015Z --></div><div class="page"><div class="container header-content"><div class="header-return"><a href="../">Back</a></div><div class="header-title">Hello world</div></div><div class="container"> Content</div></div><script src="https://unpkg.com/react@18/umd/react.production.min.js"></script><script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script><script>var mainComponent = (() => {
+  var __create = Object.create;
+  var __defProp = Object.defineProperty;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __getProtoOf = Object.getPrototypeOf;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __esm = (fn, res) => function __init() {
+    return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
+  };
+  var __commonJS = (cb, mod) => function __require() {
+    return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+  };
+  var __copyProps = (to, from, except, desc) => {
+    if (from && typeof from === "object" || typeof from === "function") {
+      for (let key of __getOwnPropNames(from))
+        if (!__hasOwnProp.call(to, key) && key !== except)
+          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+    }
+    return to;
+  };
+  var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+    // If the importer is in node compatibility mode or this is not an ESM
+    // file that has been converted to a CommonJS file using a Babel-
+    // compatible transform (i.e. "__esModule" has not been set), then set
+    // "default" to the CommonJS "module.exports" for node compatibility.
+    isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+    mod
+  ));
+
+  // external-global-plugin:react
+  var require_react = __commonJS({
+    "external-global-plugin:react"(exports, module) {
+      module.exports = globalThis.React;
+    }
+  });
+
+  // src/Page.tsx
+  var import_react, Page;
+  var init_Page = __esm({
+    "src/Page.tsx"() {
+      import_react = __toESM(require_react());
+      Page = (props) => {
+        return /* @__PURE__ */ import_react.default.createElement("div", { className: "page" }, props.children);
+      };
+    }
+  });
+
+  // src/Container.tsx
+  var import_react2, Container;
+  var init_Container = __esm({
+    "src/Container.tsx"() {
+      import_react2 = __toESM(require_react());
+      Container = (props) => {
+        return /* @__PURE__ */ import_react2.default.createElement("div", { className: `container ${props.className ?? ""}`.trim() }, props.children);
+      };
+    }
+  });
+
+  // src/Header.tsx
+  var import_react3, Header;
+  var init_Header = __esm({
+    "src/Header.tsx"() {
+      import_react3 = __toESM(require_react());
+      init_Container();
+      Header = (props) => {
+        return /* @__PURE__ */ import_react3.default.createElement(Container, { className: "header-content" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "header-return" }, /* @__PURE__ */ import_react3.default.createElement("a", { href: props.backHref }, "Back")), /* @__PURE__ */ import_react3.default.createElement("div", { className: "header-title" }, props.children));
+      };
+    }
+  });
+
+  // src/Comment.tsx
+  var import_react4, Comment;
+  var init_Comment = __esm({
+    "src/Comment.tsx"() {
+      import_react4 = __toESM(require_react());
+      Comment = ({ children }) => {
+        return /* @__PURE__ */ import_react4.default.createElement("div", { dangerouslySetInnerHTML: { __html: `<!-- ${children} -->` } });
+      };
+    }
+  });
+
+  // src/index.tsx
+  var require_src = __commonJS({
+    "src/index.tsx"(exports, module) {
+      var import_react5 = __toESM(require_react());
+      init_Page();
+      init_Header();
+      init_Comment();
+      init_Container();
+      var time = (/* @__PURE__ */ new Date()).toISOString();
+      module.exports = /* @__PURE__ */ import_react5.default.createElement("html", null, /* @__PURE__ */ import_react5.default.createElement("head", null, /* @__PURE__ */ import_react5.default.createElement("link", { href: "../src/index.css", type: "text/css", rel: "stylesheet" })), /* @__PURE__ */ import_react5.default.createElement("body", { style: { "--primary": "#70a3c7" } }, /* @__PURE__ */ import_react5.default.createElement(Comment, null, time), /* @__PURE__ */ import_react5.default.createElement(Page, null, /* @__PURE__ */ import_react5.default.createElement(Header, { backHref: "../" }, "Hello world"), /* @__PURE__ */ import_react5.default.createElement(Container, null, " Content"))));
+    }
+  });
+  return require_src();
+})();
+</script><script>ReactDOM.hydrate(mainComponent, document);</script></body></html>

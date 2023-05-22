@@ -1,0 +1,14 @@
+.header-content {
+    display: flex;
+}
+
+.header-title {
+    text-align: center;
+    align-self: center;
+    margin: 0 auto;
+}
+
+.header-return {
+    overflow: visible;
+    max-width: 0;
+}

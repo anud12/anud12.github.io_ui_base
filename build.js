@@ -1,1 +1,0 @@
-require("anud12.github.io_ui_compiler")(`${__dirname}/index.tsx`, `${__dirname}/out/index.html`);
