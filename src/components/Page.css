@@ -1,7 +1,6 @@
 .page {
     display: flex;
     flex-direction: column;
-    margin: 2rem auto 0 auto;
     font-family: 'Rajdhani', sans-serif;
 
     --border-color: #c4c4c4;
