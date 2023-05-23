@@ -22,11 +22,10 @@ module.exports = (
             <Comment>{time}</Comment>
             <Page>
                 <Container>
-                    <Header backHref={"../"}>Hello world</Header>
+                    <Header backHref={"./"}>Hello world</Header>
                     <Table />
                 </Container>
                 <Container>
-                    <Action />
                     <Table />
                 </Container>
             </Page>
