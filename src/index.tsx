@@ -13,7 +13,6 @@ module.exports = (
             <Comment>{time}</Comment>
             <Page>
                 <Header backHref={"../"}>Hello world</Header>
-
                 <Container> Content</Container>
             </Page>
         </body>
