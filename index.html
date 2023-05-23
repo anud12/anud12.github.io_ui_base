@@ -1,4 +1,4 @@
-<html><head><link href="../src/index.css" type="text/css" rel="stylesheet"></head><body style="--primary:#70a3c7"><div><!-- 2023-05-22T12:42:23.394Z --></div><div class="page"><div class="container-container"><div class="container header-content"><div class="header-return"><a href="../">Back</a></div><div class="header-title">Hello world</div></div></div><div class="container-container"><div class="container"> Content</div></div></div><script src="https://unpkg.com/react@18/umd/react.production.min.js"></script><script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script><script>var mainComponent = (() => {
+<html><head><link href="../src/main.css" type="text/css" rel="stylesheet"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,100,0,0"><link href="https://fonts.googleapis.com/css2?family=Rajdhani&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&amp;display=swap" rel="stylesheet"></head><body style="--primary:#70a3c7"><div><!-- 2023-05-23T12:39:42.431Z --></div><div class="page"><div class="container-container"><div class="container header-content"><div class="header-return"><a href="../"><span class="material-symbols-outlined">arrow_back</span></a></div><div class="header-title">Hello world</div><div class="header-login"><button><span class="material-symbols-outlined">login</span></button></div></div></div><div class="container-container"><div class="container"> Content</div></div></div><script src="https://unpkg.com/react@18/umd/react.production.min.js"></script><script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script><script>var mainComponent = (() => {
   var __create = Object.create;
   var __defProp = Object.defineProperty;
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -35,10 +35,10 @@
     }
   });
 
-  // src/Page.tsx
+  // src/components/Page.tsx
   var import_react, Page;
   var init_Page = __esm({
-    "src/Page.tsx"() {
+    "src/components/Page.tsx"() {
       import_react = __toESM(require_react());
       Page = (props) => {
         return /* @__PURE__ */ import_react.default.createElement("div", { className: "page" }, props.children);
@@ -46,10 +46,10 @@
     }
   });
 
-  // src/Container.tsx
+  // src/components/Container.tsx
   var import_react2, Container;
   var init_Container = __esm({
-    "src/Container.tsx"() {
+    "src/components/Container.tsx"() {
       import_react2 = __toESM(require_react());
       Container = (props) => {
         return /* @__PURE__ */ import_react2.default.createElement("div", { className: "container-container" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: `container ${props.className ?? ""}`.trim() }, props.children));
@@ -57,22 +57,22 @@
     }
   });
 
-  // src/Header.tsx
+  // src/components/Header.tsx
   var import_react3, Header;
   var init_Header = __esm({
-    "src/Header.tsx"() {
+    "src/components/Header.tsx"() {
       import_react3 = __toESM(require_react());
       init_Container();
       Header = (props) => {
-        return /* @__PURE__ */ import_react3.default.createElement(Container, { className: "header-content" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "header-return" }, /* @__PURE__ */ import_react3.default.createElement("a", { href: props.backHref }, "Back")), /* @__PURE__ */ import_react3.default.createElement("div", { className: "header-title" }, props.children));
+        return /* @__PURE__ */ import_react3.default.createElement(Container, { className: "header-content" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: "header-return" }, /* @__PURE__ */ import_react3.default.createElement("a", { href: props.backHref }, /* @__PURE__ */ import_react3.default.createElement("span", { className: "material-symbols-outlined" }, "arrow_back"))), /* @__PURE__ */ import_react3.default.createElement("div", { className: "header-title" }, props.children), /* @__PURE__ */ import_react3.default.createElement("div", { className: "header-login" }, /* @__PURE__ */ import_react3.default.createElement("button", null, /* @__PURE__ */ import_react3.default.createElement("span", { className: "material-symbols-outlined" }, "login"))));
       };
     }
   });
 
-  // src/Comment.tsx
+  // src/components/Comment.tsx
   var import_react4, Comment;
   var init_Comment = __esm({
-    "src/Comment.tsx"() {
+    "src/components/Comment.tsx"() {
       import_react4 = __toESM(require_react());
       Comment = ({ children }) => {
         return /* @__PURE__ */ import_react4.default.createElement("div", { dangerouslySetInnerHTML: { __html: `<!-- ${children} -->` } });
@@ -89,7 +89,7 @@
       init_Comment();
       init_Container();
       var time = (/* @__PURE__ */ new Date()).toISOString();
-      module.exports = /* @__PURE__ */ import_react5.default.createElement("html", null, /* @__PURE__ */ import_react5.default.createElement("head", null, /* @__PURE__ */ import_react5.default.createElement("link", { href: "../src/index.css", type: "text/css", rel: "stylesheet" })), /* @__PURE__ */ import_react5.default.createElement("body", { style: { "--primary": "#70a3c7" } }, /* @__PURE__ */ import_react5.default.createElement(Comment, null, time), /* @__PURE__ */ import_react5.default.createElement(Page, null, /* @__PURE__ */ import_react5.default.createElement(Header, { backHref: "../" }, "Hello world"), /* @__PURE__ */ import_react5.default.createElement(Container, null, " Content"))));
+      module.exports = /* @__PURE__ */ import_react5.default.createElement("html", null, /* @__PURE__ */ import_react5.default.createElement("head", null, /* @__PURE__ */ import_react5.default.createElement("link", { href: "../src/main.css", type: "text/css", rel: "stylesheet" }), /* @__PURE__ */ import_react5.default.createElement("link", { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,100,0,0" }), /* @__PURE__ */ import_react5.default.createElement("link", { href: "https://fonts.googleapis.com/css2?family=Rajdhani&display=swap", rel: "stylesheet" }), /* @__PURE__ */ import_react5.default.createElement("link", { href: "https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap", rel: "stylesheet" })), /* @__PURE__ */ import_react5.default.createElement("body", { style: { "--primary": "#70a3c7" } }, /* @__PURE__ */ import_react5.default.createElement(Comment, null, time), /* @__PURE__ */ import_react5.default.createElement(Page, null, /* @__PURE__ */ import_react5.default.createElement(Header, { backHref: "../" }, "Hello world"), /* @__PURE__ */ import_react5.default.createElement(Container, null, " Content"))));
     }
   });
   return require_src();
