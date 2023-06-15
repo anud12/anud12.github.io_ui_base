@@ -9,13 +9,6 @@ export type Request = {
   fixed?: boolean;
 };
 
-export type Request = {
-  name?: string;
-  size?: number;
-  fixed?: boolean;
-  parent?: string;
-};
-
 export type FolderQuery<ChildQuery> = FileMetadata & {
   query: (queryRequest: Request) => Promise<ChildQuery[]>;
   findAll: () => Promise<ChildQuery[]>;

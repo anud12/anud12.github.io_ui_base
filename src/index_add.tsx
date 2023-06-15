@@ -4,11 +4,7 @@ import { Header } from "./components/Header";
 import { Comment } from "./components/Comment";
 import { CardContainer } from "./components/Container";
 import { Table } from "./components/Table";
-import { getToken } from "./service/getToken";
 const time = new Date().toISOString();
-(async () => {
-    getToken().finally(e => console.log(e));
-})()
 module.exports = (
 
     <html>
@@ -25,10 +21,7 @@ module.exports = (
         <body style={{ "--primary": "#70a3c7", "--background-color": "white" } as CSSProperties}>
             <Comment>{time}</Comment>
             <Page>
-                <Header>Hello world</Header>
-                <Table title="Values" />
-
-                <Table />
+                <Header>Add data</Header>
             </Page>
         </body>
     </html>

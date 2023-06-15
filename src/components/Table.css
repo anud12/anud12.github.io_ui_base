@@ -16,13 +16,18 @@
 
 .table>.row:first-child>* {
     border-bottom: 1px solid var(--border-color);
-}
-
-.table>.row:first-child>*:first-child {
-    padding: 0;
-}
-
-.table>.row * {
     white-space: nowrap;
-    padding: 0.5rem;
+    padding: 0.5rem 0.75rem;
+}
+
+
+.table>.row>* {
+    white-space: nowrap;
+    padding: 0.25rem 0.75rem;
+}
+
+.table-title {
+    padding: 0.5rem 0.75rem;
+    background-color: var(--background-color);
+    display: inline-block;
 }
