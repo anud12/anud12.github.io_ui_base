@@ -1,0 +1,5 @@
+.title {
+    padding: 0.75rem 0.75rem;
+    background-color: var(--background-color);
+    display: inline-block;
+}

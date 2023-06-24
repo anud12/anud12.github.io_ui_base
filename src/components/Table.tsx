@@ -1,49 +1,60 @@
-import React, { CSSProperties, Fragment, ReactNode } from "react"
-import { CardContainer, Container } from "./Container"
+import React, { CSSProperties, Fragment, ReactNode, useEffect, useState } from "react"
+import { loadFromSheet } from "../service/google/loadFromSheet"
+import { newApi } from "../service/impl/newApi"
+import { CardContainer } from "./Container"
 import { Divider } from "./Divider"
-import { Link } from "./Link"
+import { Title } from "./atoms/Title"
 
 type Props = {
     title?: ReactNode
+    source: string,
 }
 
 export const Table = (props: Props) => {
+    const [data, setData] = useState<Array<any> | string>([]);
+    const loadData = async () => {
+        const data = await loadFromSheet(props.source)
+            .catch(e => e);
+        setData(data)
+    }
+    useEffect(() => {
+        const unsubscribe = newApi.onChange(loadData)
+        return () => unsubscribe();
+    }, [props.source])
     return <Fragment>
         <Divider />
         <CardContainer>
-            {props.title && <div>
-                <div className="table-title">
+            {props.title &&
+                <Title>
                     {props.title}
-                </div>
-            </div>}
+                </Title>}
             <div className="table-container">
-                <div className="table" style={{ "--number-of-columns": "21", "--number-of-rows": "20" } as CSSProperties}>
+                {data instanceof Array && <div className="table" style={{ "--number-of-columns": Object.keys(data?.[0] ?? {}).length, "--number-of-rows": "20" } as CSSProperties}>
                     <div className="row">
-                        <Link href="./add">
-                            Add
-                        </Link>
                         {
-                            new Array(20).fill("").map((e, jndex) =>
-                                <div key={jndex}>Header: {jndex}</div>
+                            Object.keys(data?.[0] ?? {}).map((header, jndex) =>
+                                <div key={jndex}>{header}</div>
                             )
                         }
                     </div>
-                    {new Array(10).fill("").map((e, index) =>
+                    {data.map((e, index) =>
                         <div key={index} className="row">
-                            <div>
-                                <Link href="#">
-                                    Delete
-                                </Link>
-                            </div>
                             {
-                                new Array(20).fill("").map((e, jndex) =>
-                                    <div key={jndex}>Cell with long value maybe item: {index} - property: {jndex}</div>
+                                Object.values(e).map((column, jndex) =>
+                                    <div key={jndex}>{String(column)}</div>
                                 )
                             }
                         </div>
                     )}
                 </div>
+                }
+                {!(data instanceof Array) && <pre style={{ whiteSpace: "break-spaces" }}>
+                    Failed to load table {props.source} Reason:
+                    <br />
+                    {JSON.stringify(data, null, 2)}
+                </pre>}
             </div >
+
         </CardContainer>
 
     </Fragment>

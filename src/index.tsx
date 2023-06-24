@@ -1,20 +1,18 @@
 import React, { CSSProperties } from "react";
-import { Page } from "./components/Page";
-import { Header } from "./components/Header";
 import { Comment } from "./components/Comment";
-import { CardContainer } from "./components/Container";
+import { Form } from "./components/Form";
+import { Header } from "./components/Header";
+import { Page } from "./components/Page";
 import { Table } from "./components/Table";
-import { getToken } from "./service/getToken";
+import { Input, Select } from "./components/atoms/Input";
+import { Link } from "./components/atoms/Link";
 const time = new Date().toISOString();
-(async () => {
-    getToken().finally(e => console.log(e));
-})()
+
 module.exports = (
 
     <html>
         <head>
-            <link href={"./src/main.css"} type="text/css" rel="stylesheet" />
-            <link href={"../src/main.css"} type="text/css" rel="stylesheet" />
+            <link href={"src/main.css"} type="text/css" rel="stylesheet" />
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,-25" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -22,13 +20,15 @@ module.exports = (
             <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet" />
 
         </head>
-        <body style={{ "--primary": "#70a3c7", "--background-color": "white" } as CSSProperties}>
+        <body>
             <Comment>{time}</Comment>
-            <Page>
+            <Page theme={{
+                "--primary": "#70a3c7"
+            }}>
                 <Header>Hello world</Header>
-                <Table title="Values" />
-
-                <Table />
+                <Table title={
+                    <Link href={"add"}>Add</Link>
+                } source="1mcnVFYPtTMt-UV0ZvaXs6R2MfSfcSbsMpKhp4dFW6DE" />
             </Page>
         </body>
     </html>

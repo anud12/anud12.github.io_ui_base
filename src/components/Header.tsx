@@ -1,7 +1,8 @@
 import React, { Fragment, PropsWithChildren } from "react";
 import { CardContainer } from "./Container";
-import { Link } from "./Link";
+import { Link } from "./atoms/Link";
 import { Divider } from "./Divider";
+import { SignIn } from "./api/signIn";
 type Props = PropsWithChildren<{}>;
 
 const buildBack = index => new Array(index + 1).fill("..").join("/")
@@ -24,11 +25,7 @@ export const Header = (props: Props) => {
                     {props.children}
                 </div>
                 <div className="header-login">
-                    <button>
-                        <span className="material-symbols-outlined">
-                            login
-                        </span>
-                    </button>
+                    <SignIn />
                 </div>
             </div>
             <div className="border-top header-url-chips">

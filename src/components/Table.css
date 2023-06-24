@@ -10,6 +10,11 @@
     grid-gap: 0rem;
 }
 
+.table-container {
+    min-height: 30rem;
+    max-height: 30rem;
+}
+
 .table>.row {
     display: contents;
 }
@@ -24,10 +29,4 @@
 .table>.row>* {
     white-space: nowrap;
     padding: 0.25rem 0.75rem;
-}
-
-.table-title {
-    padding: 0.5rem 0.75rem;
-    background-color: var(--background-color);
-    display: inline-block;
 }
