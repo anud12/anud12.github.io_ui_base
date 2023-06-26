@@ -3,8 +3,6 @@ type Props = PropsWithChildren<{}> & {
     href: string,
 }
 
-
-
 export const Link = (props: Props) => {
     const [searchParams, setSearchParams] = useState<string>("");
     useEffect(() => {
@@ -17,7 +15,7 @@ export const Link = (props: Props) => {
             window.removeEventListener('hashchange', fn);
         }
     }, []);
-    return <a className="link" href={props.href + "/" + searchParams}>
+    return <a className="link" href={props.href + searchParams}>
         {props.children}
     </a>
 }

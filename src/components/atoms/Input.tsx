@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useContext, useEffect, useRef } from "react";
+import React, { PropsWithChildren, useCallback, useContext, useEffect, useMemo, useRef } from "react";
 import { FormContext } from "../Form";
 
 type Props = {
@@ -23,9 +23,49 @@ const stringToSentence = str => {
         return camelToSentence(str);
     }
 };
+const fileToBase64 = (file: File | undefined) => {
+    return new Promise<string | undefined>(resolve => {
+        if (!file) {
+            resolve(undefined);
+            return;
+        }
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+            console.log("onLoad");
+            resolve((reader?.result as string)?.split?.(',')[1]);
+        }
+    })
+}
 export const Input = (props: Props) => {
     const { state, setState } = useContext(FormContext);
     const ref = useRef<HTMLInputElement | null>(null);
+    useEffect(() => {
+        if (props.type !== "file") {
+            return;
+        }
+        if (ref.current) {
+            ref.current.value = null as any;
+        }
+
+    }, [props.type, ref])
+    const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e?.target?.files?.[0];
+        if (props.type === "file") {
+            fileToBase64(file).then(fileData => {
+                console.log("then");
+                setState({ ...state, [props.name]: fileData })
+            })
+            return;
+        }
+        setState({ ...state, [props.name]: e.target.value })
+    }, [props.type, setState, state])
+    const value = useMemo(() => {
+        if (props.type === "file") {
+            return undefined;
+        }
+        return state[props.name];
+    }, [state])
 
     useEffect(() => {
         ref.current && setState({ ...state, [props.name]: ref.current.value });
@@ -34,11 +74,12 @@ export const Input = (props: Props) => {
     return <label className="input">
         <span className="input-name">{lowercaseIgnoringGroups(stringToSentence(props.name))}</span>
         <input ref={ref} type={props.type ?? "text"}
-            value={state[props.name] as string ?? ""}
-            onChange={(e) => setState({ ...state, [props.name]: e.target.value })}
+            value={value}
+            onChange={onChange}
         />
     </label>
 }
+
 export const Select = (props: PropsWithChildren<{ name: string }>) => {
     const { state, setState } = useContext(FormContext);
     const ref = useRef<HTMLSelectElement | null>(null);

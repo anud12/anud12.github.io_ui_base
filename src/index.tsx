@@ -1,10 +1,8 @@
-import React, { CSSProperties } from "react";
+import React from "react";
 import { Comment } from "./components/Comment";
-import { Form } from "./components/Form";
 import { Header } from "./components/Header";
 import { Page } from "./components/Page";
 import { Table } from "./components/Table";
-import { Input, Select } from "./components/atoms/Input";
 import { Link } from "./components/atoms/Link";
 const time = new Date().toISOString();
 
