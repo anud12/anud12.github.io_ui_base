@@ -1,7 +1,7 @@
 import React, { Fragment, PropsWithChildren } from "react";
 import { CardContainer } from "./Container";
 import { Link } from "./atoms/Link";
-import { Divider } from "./Divider";
+import { DividerH } from "./DividerH";
 import { SignIn } from "./api/signIn";
 type Props = PropsWithChildren<{}>;
 
@@ -18,7 +18,6 @@ const buildPath = () => {
 export const Header = (props: Props) => {
     const path = buildPath();
     return <Fragment>
-        <Divider />
         <CardContainer>
             <div className={"header-content"}>
                 <div className="header-title">

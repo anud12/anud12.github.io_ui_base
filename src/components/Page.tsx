@@ -1,7 +1,6 @@
-import React, { CSSProperties, PropsWithChildren } from "react";
-import { Divider } from "./Divider";
+import React, { CSSProperties, PropsWithChildren, ReactNode } from "react";
 import { Comment } from "./Comment";
-import { ReactNode } from "react";
+import { DividerH } from "./DividerH";
 import { Header } from "./Header";
 
 type Props = PropsWithChildren<{
@@ -33,9 +32,10 @@ export const Page = (props: Props) => {
                     "--background-color": theme["--background-color"] ?? "white",
                     "--border-color": theme['--border-color'] ?? "#c4c4c4",
                 } as CSSProperties}>
-                    <Header>{props.title}</Header>
-                    {props.children}
-                    <Divider />
+                    <div className="page-content">
+                        <Header>{props.title}</Header>
+                        {props.children}
+                    </div>
                 </div>
             </body>
         </html>

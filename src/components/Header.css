@@ -43,11 +43,13 @@ button {
 
 .header-url-chips {
     min-height: 1.9rem;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .header-url-chips>div {
     display: inline-block;
     border-right: 1px solid var(--border-color);
+
 }
 
 .header-url-chips>div>a {

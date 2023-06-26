@@ -11,8 +11,8 @@
 }
 
 .table-container {
-    min-height: 30rem;
-    max-height: 30rem;
+    min-height: 15rem;
+    max-height: 15rem;
 }
 
 .table>.row {

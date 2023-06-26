@@ -4,7 +4,7 @@ type Props = PropsWithChildren<{}> & {
 }
 export const CardContainer = (props: Props) => {
     return <div className="container-container">
-        <div className={`container card-container border ${props.className ?? ""}`.trim()}>
+        <div className={`container card-container ${props.className ?? ""}`.trim()}>
             {props.children}
         </div>
     </div>

@@ -1,7 +1,7 @@
 import React, { Fragment, PropsWithChildren, ReactNode, createContext, useCallback, useState } from "react"
 import { uploadFormDataToFolder } from "../service/google/uploadToFile"
 import { CardContainer } from "./Container"
-import { Divider } from "./Divider"
+import { DividerH } from "./DividerH"
 import { Button } from "./atoms/Button"
 import { Title } from "./atoms/Title"
 
@@ -18,7 +18,6 @@ export const Form = (props: Props) => {
     const [state, setState] = useState({});
 
     return <Fragment>
-        <Divider />
         <CardContainer>
             {props.title &&
                 <Title>

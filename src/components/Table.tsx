@@ -2,7 +2,7 @@ import React, { CSSProperties, Fragment, ReactNode, useEffect, useState } from "
 import { loadFromSheet } from "../service/google/loadFromSheet"
 import { newApi } from "../service/impl/newApi"
 import { CardContainer } from "./Container"
-import { Divider } from "./Divider"
+import { DividerH } from "./DividerH"
 import { Title } from "./atoms/Title"
 
 type Props = {
@@ -22,12 +22,7 @@ export const Table = (props: Props) => {
         return () => unsubscribe();
     }, [props.source])
     return <Fragment>
-        <Divider />
         <CardContainer>
-            {props.title &&
-                <Title>
-                    {props.title}
-                </Title>}
             <div className="table-container">
                 {data instanceof Array && <div className="table" style={{ "--number-of-columns": Object.keys(data?.[0] ?? {}).length, "--number-of-rows": "20" } as CSSProperties}>
                     <div className="row">
