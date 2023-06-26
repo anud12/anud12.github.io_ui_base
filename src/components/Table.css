@@ -5,6 +5,7 @@
 .table {
     display: grid;
     width: 100%;
+    background-color: var(--background-color);
     grid-template-columns: repeat(var(--number-of-columns), 1fr);
     border-collapse: collapse;
     grid-gap: 0rem;
@@ -22,6 +23,9 @@
 .table>.row:first-child>* {
     border-bottom: 1px solid var(--border-color);
     white-space: nowrap;
+    position: sticky;
+    top: 0px;
+    background-color: var(--background-color);
     padding: 0.5rem 0.75rem;
 }
 

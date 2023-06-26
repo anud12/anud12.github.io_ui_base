@@ -1,4 +1,6 @@
 .link,
 .link:visited {
-    color: var(--primary)
+    color: var(--primary);
+    display: block;
+    padding: 0.50rem 0.50rem;
 }
