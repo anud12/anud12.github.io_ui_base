@@ -1,4 +1,4 @@
-<html><head><link href="./src/main.css" type="text/css" rel="stylesheet"><link href="../src/main.css" type="text/css" rel="stylesheet"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,-25"><meta name="viewport" content="width=device-width, initial-scale=1"><link href="https://fonts.googleapis.com/css2?family=Rajdhani&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&amp;display=swap" rel="stylesheet"></head><body style="--primary:#70a3c7;--background-color:white"><div><!-- 2023-06-26T11:55:13.043Z --></div><div class="page" style="--primary:#0074cc;--background-color:white;--border-color:#c4c4c4"><div class="divider"></div><div class="container-container"><div class="container card-container border"><div class="header-content"><div class="header-title">Boxes</div><div class="header-login"><button class="button">Login</button></div></div><div class="border-top header-url-chips"><div><a class="link" href="/">Home</a></div></div></div></div><div class="divider"></div><div class="container-container"><div class="container card-container border"><form class="form"><label class="input"><span class="input-name">Camel case</span><input type="text"></label><label class="input"><span class="input-name">Kebab case</span><input type="text"></label><label class="input"><span class="input-name">Snake case</span><input type="text"></label><label class="input"><span class="input-name">Snake case file</span><input type="file"></label><label class="input"><span class="input-name">Camel case demo</span><select name="camelCase demo"><option>Value</option></select></label><div class="submit-container"><button class="button">Submit</button></div></form></div></div><div class="divider"></div></div><script src="https://unpkg.com/react@18/umd/react.production.min.js"></script><script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script><script>var mainComponent = (() => {
+<html><head><link href="/src/main.css" type="text/css" rel="stylesheet"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,-25"><meta name="viewport" content="width=device-width, initial-scale=1"><link href="https://fonts.googleapis.com/css2?family=Rajdhani&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&amp;display=swap" rel="stylesheet"></head><body><div><!-- 2023-06-26T12:23:17.583Z --></div><div class="page" style="--primary:#0074cc;--background-color:white;--border-color:#c4c4c4"><div class="divider"></div><div class="container-container"><div class="container card-container border"><div class="header-content"><div class="header-title">Add boxes</div><div class="header-login"><button class="button">Login</button></div></div><div class="border-top header-url-chips"><div><a class="link" href="/">Home</a></div></div></div></div><div class="divider"></div><div class="container-container"><div class="container card-container border"><form class="form"><label class="input"><span class="input-name">Camel case</span><input type="text"></label><label class="input"><span class="input-name">Kebab case</span><input type="text"></label><label class="input"><span class="input-name">Snake case</span><input type="text"></label><label class="input"><span class="input-name">Snake case file</span><input type="file"></label><label class="input"><span class="input-name">Camel case demo</span><select name="camelCase demo"><option>Value</option></select></label><div class="submit-container"><button class="button">Submit</button></div></form></div></div><div class="divider"></div></div><script src="https://unpkg.com/react@18/umd/react.production.min.js"></script><script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script><script>var mainComponent = (() => {
   var __create = Object.create;
   var __defProp = Object.defineProperty;
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -44,19 +44,13 @@
     }
   });
 
-  // src/components/Page.tsx
-  var import_react2, Page;
-  var init_Page = __esm({
-    "src/components/Page.tsx"() {
+  // src/components/Comment.tsx
+  var import_react2, Comment;
+  var init_Comment = __esm({
+    "src/components/Comment.tsx"() {
       import_react2 = __toESM(require_react());
-      init_Divider();
-      Page = (props) => {
-        const theme = props.theme ?? {};
-        return /* @__PURE__ */ import_react2.default.createElement("div", { className: "page", style: {
-          "--primary": theme["--primary"] ?? "#0074cc",
-          "--background-color": theme["--background-color"] ?? "white",
-          "--border-color": theme["--border-color"] ?? "#c4c4c4"
-        } }, props.children, /* @__PURE__ */ import_react2.default.createElement(Divider, null));
+      Comment = ({ children }) => {
+        return /* @__PURE__ */ import_react2.default.createElement("div", { dangerouslySetInnerHTML: { __html: `<!-- ${children} -->` } });
       };
     }
   });
@@ -328,13 +322,22 @@
     }
   });
 
-  // src/components/Comment.tsx
-  var import_react8, Comment;
-  var init_Comment = __esm({
-    "src/components/Comment.tsx"() {
+  // src/components/Page.tsx
+  var import_react8, time, Page;
+  var init_Page = __esm({
+    "src/components/Page.tsx"() {
       import_react8 = __toESM(require_react());
-      Comment = ({ children }) => {
-        return /* @__PURE__ */ import_react8.default.createElement("div", { dangerouslySetInnerHTML: { __html: `<!-- ${children} -->` } });
+      init_Divider();
+      init_Comment();
+      init_Header();
+      time = (/* @__PURE__ */ new Date()).toISOString();
+      Page = (props) => {
+        const theme = props.theme ?? {};
+        return /* @__PURE__ */ import_react8.default.createElement("html", null, /* @__PURE__ */ import_react8.default.createElement("head", null, /* @__PURE__ */ import_react8.default.createElement("link", { href: "/src/main.css", type: "text/css", rel: "stylesheet" }), /* @__PURE__ */ import_react8.default.createElement("link", { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,-25" }), /* @__PURE__ */ import_react8.default.createElement("meta", { name: "viewport", content: "width=device-width, initial-scale=1" }), /* @__PURE__ */ import_react8.default.createElement("link", { href: "https://fonts.googleapis.com/css2?family=Rajdhani&display=swap", rel: "stylesheet" }), /* @__PURE__ */ import_react8.default.createElement("link", { href: "https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap", rel: "stylesheet" })), /* @__PURE__ */ import_react8.default.createElement("body", null, /* @__PURE__ */ import_react8.default.createElement(Comment, null, time), /* @__PURE__ */ import_react8.default.createElement("div", { className: "page", style: {
+          "--primary": theme["--primary"] ?? "#0074cc",
+          "--background-color": theme["--background-color"] ?? "white",
+          "--border-color": theme["--border-color"] ?? "#c4c4c4"
+        } }, /* @__PURE__ */ import_react8.default.createElement(Header, null, props.title), props.children, /* @__PURE__ */ import_react8.default.createElement(Divider, null))));
       };
     }
   });
@@ -505,12 +508,10 @@
     "src/index_add.tsx"(exports, module) {
       var import_react12 = __toESM(require_react());
       init_Page();
-      init_Header();
-      init_Comment();
       init_Form();
       init_Input();
-      var time = (/* @__PURE__ */ new Date()).toISOString();
-      module.exports = /* @__PURE__ */ import_react12.default.createElement("html", null, /* @__PURE__ */ import_react12.default.createElement("head", null, /* @__PURE__ */ import_react12.default.createElement("link", { href: "./src/main.css", type: "text/css", rel: "stylesheet" }), /* @__PURE__ */ import_react12.default.createElement("link", { href: "../src/main.css", type: "text/css", rel: "stylesheet" }), /* @__PURE__ */ import_react12.default.createElement("link", { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,-25" }), /* @__PURE__ */ import_react12.default.createElement("meta", { name: "viewport", content: "width=device-width, initial-scale=1" }), /* @__PURE__ */ import_react12.default.createElement("link", { href: "https://fonts.googleapis.com/css2?family=Rajdhani&display=swap", rel: "stylesheet" }), /* @__PURE__ */ import_react12.default.createElement("link", { href: "https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap", rel: "stylesheet" })), /* @__PURE__ */ import_react12.default.createElement("body", { style: { "--primary": "#70a3c7", "--background-color": "white" } }, /* @__PURE__ */ import_react12.default.createElement(Comment, null, time), /* @__PURE__ */ import_react12.default.createElement(Page, null, /* @__PURE__ */ import_react12.default.createElement(Header, null, "Boxes"), /* @__PURE__ */ import_react12.default.createElement(Form, { folderId: "1DwTbUSWf5kzNq84Kc08bJ9Wyw9ijfBuS" }, /* @__PURE__ */ import_react12.default.createElement(Input, { name: "camelCase", type: "text" }), /* @__PURE__ */ import_react12.default.createElement(Input, { name: "kebab-case", type: "text" }), /* @__PURE__ */ import_react12.default.createElement(Input, { name: "snake_case", type: "text" }), /* @__PURE__ */ import_react12.default.createElement(Input, { name: "snake_case file", type: "file" }), /* @__PURE__ */ import_react12.default.createElement(Select, { name: "camelCase demo" }, /* @__PURE__ */ import_react12.default.createElement("option", null, "Value"))))));
+      var time2 = (/* @__PURE__ */ new Date()).toISOString();
+      module.exports = /* @__PURE__ */ import_react12.default.createElement(Page, { title: "Add boxes" }, /* @__PURE__ */ import_react12.default.createElement(Form, { folderId: "1DwTbUSWf5kzNq84Kc08bJ9Wyw9ijfBuS" }, /* @__PURE__ */ import_react12.default.createElement(Input, { name: "camelCase", type: "text" }), /* @__PURE__ */ import_react12.default.createElement(Input, { name: "kebab-case", type: "text" }), /* @__PURE__ */ import_react12.default.createElement(Input, { name: "snake_case", type: "text" }), /* @__PURE__ */ import_react12.default.createElement(Input, { name: "snake_case file", type: "file" }), /* @__PURE__ */ import_react12.default.createElement(Select, { name: "camelCase demo" }, /* @__PURE__ */ import_react12.default.createElement("option", null, "Value"))));
     }
   });
   return require_index_add();

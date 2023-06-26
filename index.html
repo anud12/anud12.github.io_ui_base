@@ -1,4 +1,4 @@
-<html><head><link href="src/main.css" type="text/css" rel="stylesheet"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,-25"><meta name="viewport" content="width=device-width, initial-scale=1"><link href="https://fonts.googleapis.com/css2?family=Rajdhani&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&amp;display=swap" rel="stylesheet"></head><body><div><!-- 2023-06-26T11:55:12.787Z --></div><div class="page" style="--primary:#70a3c7;--background-color:white;--border-color:#c4c4c4"><div class="divider"></div><div class="container-container"><div class="container card-container border"><div class="header-content"><div class="header-title">Hello world</div><div class="header-login"><button class="button">Login</button></div></div><div class="border-top header-url-chips"><div><a class="link" href="/">Home</a></div></div></div></div><div class="divider"></div><div class="container-container"><div class="container card-container border"><div class="title"><a class="link" href="add">Add</a></div><div class="table-container"><div class="table" style="--number-of-columns:0;--number-of-rows:20"><div class="row"></div></div></div></div></div><div class="divider"></div></div><script src="https://unpkg.com/react@18/umd/react.production.min.js"></script><script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script><script>var mainComponent = (() => {
+<html><head><link href="/src/main.css" type="text/css" rel="stylesheet"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,-25"><meta name="viewport" content="width=device-width, initial-scale=1"><link href="https://fonts.googleapis.com/css2?family=Rajdhani&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&amp;display=swap" rel="stylesheet"></head><body><div><!-- 2023-06-26T12:23:17.753Z --></div><div class="page" style="--primary:#70a3c7;--background-color:white;--border-color:#c4c4c4"><div class="divider"></div><div class="container-container"><div class="container card-container border"><div class="header-content"><div class="header-title">Hello world</div><div class="header-login"><button class="button">Login</button></div></div><div class="border-top header-url-chips"><div><a class="link" href="/">Home</a></div></div></div></div><div class="divider"></div><div class="container-container"><div class="container card-container border"><div class="title"><a class="link" href="add">Add</a></div><div class="table-container"><div class="table" style="--number-of-columns:0;--number-of-rows:20"><div class="row"></div></div></div></div></div><div class="divider"></div></div><script src="https://unpkg.com/react@18/umd/react.production.min.js"></script><script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script><script>var mainComponent = (() => {
   var __create = Object.create;
   var __defProp = Object.defineProperty;
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -35,36 +35,45 @@
     }
   });
 
+  // src/components/Divider.tsx
+  var import_react, Divider;
+  var init_Divider = __esm({
+    "src/components/Divider.tsx"() {
+      import_react = __toESM(require_react());
+      Divider = () => /* @__PURE__ */ import_react.default.createElement("div", { className: "divider" });
+    }
+  });
+
   // src/components/Comment.tsx
-  var import_react, Comment;
+  var import_react2, Comment;
   var init_Comment = __esm({
     "src/components/Comment.tsx"() {
-      import_react = __toESM(require_react());
+      import_react2 = __toESM(require_react());
       Comment = ({ children }) => {
-        return /* @__PURE__ */ import_react.default.createElement("div", { dangerouslySetInnerHTML: { __html: `<!-- ${children} -->` } });
+        return /* @__PURE__ */ import_react2.default.createElement("div", { dangerouslySetInnerHTML: { __html: `<!-- ${children} -->` } });
       };
     }
   });
 
   // src/components/Container.tsx
-  var import_react2, CardContainer;
+  var import_react3, CardContainer;
   var init_Container = __esm({
     "src/components/Container.tsx"() {
-      import_react2 = __toESM(require_react());
+      import_react3 = __toESM(require_react());
       CardContainer = (props) => {
-        return /* @__PURE__ */ import_react2.default.createElement("div", { className: "container-container" }, /* @__PURE__ */ import_react2.default.createElement("div", { className: `container card-container border ${props.className ?? ""}`.trim() }, props.children));
+        return /* @__PURE__ */ import_react3.default.createElement("div", { className: "container-container" }, /* @__PURE__ */ import_react3.default.createElement("div", { className: `container card-container border ${props.className ?? ""}`.trim() }, props.children));
       };
     }
   });
 
   // src/components/atoms/Link.tsx
-  var import_react3, Link;
+  var import_react4, Link;
   var init_Link = __esm({
     "src/components/atoms/Link.tsx"() {
-      import_react3 = __toESM(require_react());
+      import_react4 = __toESM(require_react());
       Link = (props) => {
-        const [searchParams, setSearchParams] = (0, import_react3.useState)("");
-        (0, import_react3.useEffect)(() => {
+        const [searchParams, setSearchParams] = (0, import_react4.useState)("");
+        (0, import_react4.useEffect)(() => {
           setSearchParams(window.location.hash);
           const fn = () => {
             setSearchParams(window.location.hash);
@@ -74,17 +83,8 @@
             window.removeEventListener("hashchange", fn);
           };
         }, []);
-        return /* @__PURE__ */ import_react3.default.createElement("a", { className: "link", href: props.href + searchParams }, props.children);
+        return /* @__PURE__ */ import_react4.default.createElement("a", { className: "link", href: props.href + searchParams }, props.children);
       };
-    }
-  });
-
-  // src/components/Divider.tsx
-  var import_react4, Divider;
-  var init_Divider = __esm({
-    "src/components/Divider.tsx"() {
-      import_react4 = __toESM(require_react());
-      Divider = () => /* @__PURE__ */ import_react4.default.createElement("div", { className: "divider" });
     }
   });
 
@@ -323,18 +323,21 @@
   });
 
   // src/components/Page.tsx
-  var import_react8, Page;
+  var import_react8, time, Page;
   var init_Page = __esm({
     "src/components/Page.tsx"() {
       import_react8 = __toESM(require_react());
       init_Divider();
+      init_Comment();
+      init_Header();
+      time = (/* @__PURE__ */ new Date()).toISOString();
       Page = (props) => {
         const theme = props.theme ?? {};
-        return /* @__PURE__ */ import_react8.default.createElement("div", { className: "page", style: {
+        return /* @__PURE__ */ import_react8.default.createElement("html", null, /* @__PURE__ */ import_react8.default.createElement("head", null, /* @__PURE__ */ import_react8.default.createElement("link", { href: "/src/main.css", type: "text/css", rel: "stylesheet" }), /* @__PURE__ */ import_react8.default.createElement("link", { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,-25" }), /* @__PURE__ */ import_react8.default.createElement("meta", { name: "viewport", content: "width=device-width, initial-scale=1" }), /* @__PURE__ */ import_react8.default.createElement("link", { href: "https://fonts.googleapis.com/css2?family=Rajdhani&display=swap", rel: "stylesheet" }), /* @__PURE__ */ import_react8.default.createElement("link", { href: "https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap", rel: "stylesheet" })), /* @__PURE__ */ import_react8.default.createElement("body", null, /* @__PURE__ */ import_react8.default.createElement(Comment, null, time), /* @__PURE__ */ import_react8.default.createElement("div", { className: "page", style: {
           "--primary": theme["--primary"] ?? "#0074cc",
           "--background-color": theme["--background-color"] ?? "white",
           "--border-color": theme["--border-color"] ?? "#c4c4c4"
-        } }, props.children, /* @__PURE__ */ import_react8.default.createElement(Divider, null));
+        } }, /* @__PURE__ */ import_react8.default.createElement(Header, null, props.title), props.children, /* @__PURE__ */ import_react8.default.createElement(Divider, null))));
       };
     }
   });
@@ -423,15 +426,18 @@
   var require_src = __commonJS({
     "src/index.tsx"(exports, module) {
       var import_react11 = __toESM(require_react());
-      init_Comment();
-      init_Header();
       init_Page();
       init_Table();
       init_Link();
-      var time = (/* @__PURE__ */ new Date()).toISOString();
-      module.exports = /* @__PURE__ */ import_react11.default.createElement("html", null, /* @__PURE__ */ import_react11.default.createElement("head", null, /* @__PURE__ */ import_react11.default.createElement("link", { href: "src/main.css", type: "text/css", rel: "stylesheet" }), /* @__PURE__ */ import_react11.default.createElement("link", { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,-25" }), /* @__PURE__ */ import_react11.default.createElement("meta", { name: "viewport", content: "width=device-width, initial-scale=1" }), /* @__PURE__ */ import_react11.default.createElement("link", { href: "https://fonts.googleapis.com/css2?family=Rajdhani&display=swap", rel: "stylesheet" }), /* @__PURE__ */ import_react11.default.createElement("link", { href: "https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap", rel: "stylesheet" })), /* @__PURE__ */ import_react11.default.createElement("body", null, /* @__PURE__ */ import_react11.default.createElement(Comment, null, time), /* @__PURE__ */ import_react11.default.createElement(Page, { theme: {
+      module.exports = /* @__PURE__ */ import_react11.default.createElement(Page, { title: "Hello world", theme: {
         "--primary": "#70a3c7"
-      } }, /* @__PURE__ */ import_react11.default.createElement(Header, null, "Hello world"), /* @__PURE__ */ import_react11.default.createElement(Table, { title: /* @__PURE__ */ import_react11.default.createElement(Link, { href: "add" }, "Add"), source: "1mcnVFYPtTMt-UV0ZvaXs6R2MfSfcSbsMpKhp4dFW6DE" }))));
+      } }, /* @__PURE__ */ import_react11.default.createElement(
+        Table,
+        {
+          source: "1mcnVFYPtTMt-UV0ZvaXs6R2MfSfcSbsMpKhp4dFW6DE",
+          title: /* @__PURE__ */ import_react11.default.createElement(Link, { href: "add" }, "Add")
+        }
+      ));
     }
   });
   return require_src();
