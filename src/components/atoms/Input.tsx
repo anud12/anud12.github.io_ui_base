@@ -3,7 +3,8 @@ import { FormContext } from "../Form";
 
 type Props = {
     name: string,
-    type?: HTMLInputElement['type']
+    type?: HTMLInputElement['type'],
+    accept?: string,
 }
 
 const kebabToSentence = (str: string) => str.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
@@ -75,6 +76,7 @@ export const Input = (props: Props) => {
         <span className="input-name">{lowercaseIgnoringGroups(stringToSentence(props.name))}</span>
         <input ref={ref} type={props.type ?? "text"}
             value={value}
+            accept={props.accept}
             onChange={onChange}
         />
     </label>

@@ -14,7 +14,7 @@ module.exports = (
             <Input name="camelCase" type="text" />
             <Input name="kebab-case" type="text" />
             <Input name="snake_case" type="text" />
-            <Input name="snake_case file" type="file" />
+            <Input name="snake_case file" type="file" accept="image/*" />
             <Select name="camelCase demo">
                 <option>Value</option>
             </Select>
