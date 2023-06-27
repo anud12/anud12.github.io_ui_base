@@ -2,8 +2,6 @@ import React, { CSSProperties, Fragment, ReactNode, useEffect, useState } from "
 import { loadFromSheet } from "../service/google/loadFromSheet"
 import { newApi } from "../service/impl/newApi"
 import { CardContainer } from "./Container"
-import { DividerH } from "./DividerH"
-import { Title } from "./atoms/Title"
 
 type Props = {
     title?: ReactNode

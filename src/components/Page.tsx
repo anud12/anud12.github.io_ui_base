@@ -1,6 +1,5 @@
 import React, { CSSProperties, PropsWithChildren, ReactNode } from "react";
 import { Comment } from "./Comment";
-import { DividerH } from "./DividerH";
 import { Header } from "./Header";
 
 type Props = PropsWithChildren<{
