@@ -25,7 +25,9 @@ export const Form = (props: Props) => {
                 </Title>}
             <form className="form" onSubmit={uploadFormDataToFolder(props.folderId, state) as any}>
                 <FormContext.Provider value={{ state, setState }}>
-                    {props.children}
+                    <div className="form-content">
+                        {props.children}
+                    </div>
                 </FormContext.Provider>
                 <div className="submit-container">
                     <Button>Submit</Button>

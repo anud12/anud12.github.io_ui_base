@@ -1,17 +1,36 @@
+.form-content {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+}
+
 .input {
-    display: block;
+    display: contents;
 }
 
 .input-name {
+    white-space: nowrap;
     display: block;
+    border-width: 0 0 1px 0px;
+
+}
+
+.input-name,
+input,
+select {
+    border-style: solid;
+    border-color: var(--border-color);
     padding: 0.50rem 0.75rem;
 }
 
 .input input,
 .input select {
-    padding: 0.35rem 0.75rem;
-    border-width: 0 0 1px 0;
-    border-color: var(--border-color);
+    display: block;
+    /* padding: 0.35rem 0.75rem; */
+    border-width: 0 0 1px 1px;
     background-color: #00000010;
-    width: 100%;
+}
+
+.submit-container {
+    display: flex;
+    flex-direction: row-reverse;
 }
