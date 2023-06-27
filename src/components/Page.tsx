@@ -17,7 +17,7 @@ export const Page = (props: Props) => {
     return (
         <html>
             <head>
-                <link href={"/src/main.css"} type="text/css" rel="stylesheet" />
+                <link href={"./src/main.css"} type="text/css" rel="stylesheet" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,-25" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
