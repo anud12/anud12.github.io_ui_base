@@ -20,6 +20,9 @@ export const Page = (props: Props) => {
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,-25" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+                <script src="https://apis.google.com/js/api.js"></script>
+                <script src="https://accounts.google.com/gsi/client"></script>
+
                 <link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet" />
                 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet" />
 
