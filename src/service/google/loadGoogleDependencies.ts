@@ -3,13 +3,14 @@ const loadScript = (src: string): Promise<void> =>
         if (!globalThis.document) {
             return;
         }
-        const script = document.createElement('script');
-        script.async = true;
-        script.defer = true;
-        script.src = src;
-        script.onload = () => resolve();
-        script.onerror = reject;
-        document.head.appendChild(script);
+        resolve();
+        // const script = document.createElement('script');
+        // script.async = true;
+        // script.defer = true;
+        // script.src = src;
+        // script.onload = () => resolve();
+        // script.onerror = reject;
+        // document.head.appendChild(script);
     })
 
 export const loadGoogleDependencies = Promise.all([
