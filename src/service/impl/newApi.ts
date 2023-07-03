@@ -1,11 +1,7 @@
-import { rejects } from "assert";
 import { Api } from "../api";
 import { gapiClientPromise } from "../google/gapiClientPromise";
 import { getExpirationDate } from "../google/getExpirationDate";
 import { tokenClientPromise } from "../google/tokenClientPromise";
-import { resolve } from "path";
-import { async } from "rxjs";
-import { url } from "inspector";
 function addQueryParam(value) {
     const newUrl = new URL(window.location.href);
     newUrl.hash = JSON.stringify(value);
