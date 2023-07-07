@@ -22,7 +22,9 @@ export const Page = (props: Props) => {
 
                 <script src="https://apis.google.com/js/api.js"></script>
                 <script src="https://accounts.google.com/gsi/client"></script>
+                <script src="https://izitoast.marcelodolza.com/js/iziToast.min.js?v=140b" />
 
+                <link href="https://izitoast.marcelodolza.com/css/iziToast.min.css?v=140a" rel="stylesheet" />
                 <link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet" />
                 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet" />
 
