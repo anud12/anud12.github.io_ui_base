@@ -24,7 +24,7 @@ export const Form = (props: Props) => {
             iziToast.success({
                 icon: 'icon-person',
                 title: 'Upload succesfull',
-                position: 'topRight'
+                position: 'bottomRight'
             })
         }).catch((e: Error) => {
             if (!globalThis.document) {
@@ -33,7 +33,7 @@ export const Form = (props: Props) => {
             iziToast.error({
                 timeout: 20000,
                 title: `${e.name}:${e.message}`,
-                position: 'topRight'
+                position: 'bottomRight'
             })
         })
     }, [])
