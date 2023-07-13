@@ -39,4 +39,4 @@ declare const _default: {
     }) => React.JSX.Element;
     Button: (props: React.ClassAttributes<HTMLButtonElement> & React.ButtonHTMLAttributes<HTMLButtonElement>) => React.JSX.Element;
 };
-export default _default;
+export = _default;
