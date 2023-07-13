@@ -11,12 +11,11 @@ declare global {
     let iziToast: any;
     let gapi: any;
 }
-
-module.exports = {
+export default {
     Page,
     Table,
     Link,
     Form,
     Input,
     Button,
-};
+}
