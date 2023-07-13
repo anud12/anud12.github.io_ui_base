@@ -26,7 +26,8 @@ export const uploadFormDataToFolder = (parentId: string, data) => async (event: 
     event.preventDefault();
     // const formData = new FormData(event.target as HTMLFormElement);
     const gapi = await gapiClientPromise;
-    const idToken = gapi.client.getToken().access_token
+    const idToken = gapi.client.getToken().access_token;
+
     return fetch("https://www.googleapis.com/upload/drive/v3/files?uploadType=resumable", {
         method: "POST",
         headers: new Headers({
