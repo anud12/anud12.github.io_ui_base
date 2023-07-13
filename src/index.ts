@@ -11,7 +11,7 @@ declare global {
     let iziToast: any;
     let gapi: any;
 }
-export default {
+export = {
     Page,
     Table,
     Link,
