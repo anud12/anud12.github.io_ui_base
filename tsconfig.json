@@ -1,0 +1,18 @@
+{
+  "include": [
+    "src/index.ts"
+  ],
+  "compilerOptions": {
+    "lib": [
+      "ES2021",
+      "DOM"
+    ],
+    "outDir": "lib",
+    "jsx": "react",
+    "downlevelIteration": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true
+  }
+}

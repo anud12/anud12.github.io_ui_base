@@ -22,7 +22,7 @@ async function formDataToJson(formData) {
     return JSON.stringify(result);
 }
 
-export const uploadFormDataToFolder = (parentId: string, data) => async (event: SubmitEvent) => {
+export const uploadFormDataToFolder = (parentId: string, data) => async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // const formData = new FormData(event.target as HTMLFormElement);
     const formData = JSON.stringify(data);

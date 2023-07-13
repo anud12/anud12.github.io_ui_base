@@ -5,7 +5,7 @@ type Props = {
     name: string,
     type?: HTMLInputElement['type'],
     accept?: string,
-    capture?: "camera" | "user";
+    capture?: "environment" | "user";
 }
 
 const kebabToSentence = (str: string) => str.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
@@ -76,7 +76,7 @@ export const Input = (props: Props) => {
     return <label className="input">
         <span className="input-name">{lowercaseIgnoringGroups(stringToSentence(props.name))}</span>
         <input ref={ref} type={props.type ?? "text"}
-            value={value}
+            value={value as string}
             capture={props.capture}
             accept={props.accept}
             onChange={onChange}

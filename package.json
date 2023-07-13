@@ -2,31 +2,28 @@
   "name": "anud12.github.io_ui_base",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild src/index.ts --bundle --platform=node --sourcemap=external --outdir=lib && tsc",
     "dev": "concurrently \"npm:dev-*\"  ",
     "dev-build": "nodemon --ext js,tsx,ts,css --watch ./src src/build.js",
-    "dev-server": "live-server --port=8081 --no-css-inject --watch=./**/*.html --watch=./**/*.css --entry-file=./ ./",
-    "build": "node ./src/build.js"
+    "dev-server": "live-server --port=8081 --no-css-inject --watch=./**/*.html --watch=./**/*.css --entry-file=./ ./"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/gapi": "^0.0.44",
-    "@types/google-one-tap": "^1.2.2",
-    "@types/google.accounts": "^0.0.7",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "typescript": "^5.0.4"
+    "@types/node": "^20.2.1",
+    "anud12.github.io_ui_compiler": "github:anud12/anud12.github.io_ui_compiler"
   },
   "devDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.0.4",
     "concurrently": "^8.0.1",
     "live-server": "^1.2.2",
-    "nodemon": "^2.0.22",
-    "anud12.github.io_ui_compiler": "github:anud12/anud12.github.io_ui_compiler",
-    "@types/node": "^20.2.1"
+    "nodemon": "^2.0.22"
   }
 }

@@ -30,6 +30,7 @@ export const Form = (props: Props) => {
             if (!globalThis.document) {
                 return;
             }
+            //@ts-ignore
             iziToast.error({
                 timeout: 20000,
                 title: `${e.name}:${e.message}`,
