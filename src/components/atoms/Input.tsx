@@ -55,8 +55,7 @@ export const Input = (props: Props) => {
     const file = e?.target?.files?.[0];
     if (props.type === "file") {
       fileToBase64(file).then(fileData => {
-        console.log("then");
-        setState({...state, [props.name]: fileData})
+        setState({...state, [props.name]: {data:fileData, mimeType: file.type}})
       })
       return;
     }
