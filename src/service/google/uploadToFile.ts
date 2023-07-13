@@ -25,10 +25,9 @@ async function formDataToJson(formData) {
 export const uploadFormDataToFolder = (parentId: string, data) => async (event: SubmitEvent) => {
     event.preventDefault();
     // const formData = new FormData(event.target as HTMLFormElement);
-    const formData = JSON.stringify(data);
     const gapi = await gapiClientPromise;
     const idToken = gapi.client.getToken().access_token
-    fetch("https://www.googleapis.com/upload/drive/v3/files?uploadType=resumable", {
+    return fetch("https://www.googleapis.com/upload/drive/v3/files?uploadType=resumable", {
         method: "POST",
         headers: new Headers({
             'Authorization': `Bearer ${idToken}`,
@@ -39,16 +38,13 @@ export const uploadFormDataToFolder = (parentId: string, data) => async (event: 
             parents: [parentId]
         })
     }).then(async apiResponse => {
-        return (await apiResponse.headers.get('Location'))
-    }).then(async id => {
-        fetch(id ?? "", {
+        return fetch(await apiResponse.headers.get('Location') ?? "", {
             method: 'PUT',
             headers: new Headers({
                 'Authorization': `Bearer ${idToken}`,
                 'Content-Type': 'application/json'
             }),
-            body: formData
+            body: JSON.stringify(data)
         })
-        // .then(res => console.log(res))
     })
 }
