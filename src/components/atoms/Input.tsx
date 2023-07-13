@@ -5,6 +5,7 @@ type Props = {
     name: string,
     type?: HTMLInputElement['type'],
     accept?: string,
+    isOptional?: boolean
     capture?: "environment" | "user";
 }
 
@@ -34,7 +35,6 @@ const fileToBase64 = (file: File | undefined) => {
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = () => {
-            console.log("onLoad");
             resolve((reader?.result as string)?.split?.(',')[1]);
         }
     })
@@ -55,8 +55,7 @@ export const Input = (props: Props) => {
         const file = e?.target?.files?.[0];
         if (props.type === "file") {
             fileToBase64(file).then(fileData => {
-                console.log("then");
-                setState({ ...state, [props.name]: fileData })
+                setState({ ...state, [props.name]: { data: fileData, mimeType: file.type } })
             })
             return;
         }
@@ -77,6 +76,7 @@ export const Input = (props: Props) => {
         <span className="input-name">{lowercaseIgnoringGroups(stringToSentence(props.name))}</span>
         <input ref={ref} type={props.type ?? "text"}
             value={value as string}
+            required={props.isOptional && false || true}
             capture={props.capture}
             accept={props.accept}
             onChange={onChange}
@@ -84,19 +84,21 @@ export const Input = (props: Props) => {
     </label>
 }
 
-export const Select = (props: PropsWithChildren<{ name: string }>) => {
+export const Select = (props: PropsWithChildren<{ name: string, isOptional: boolean }>) => {
     const { state, setState } = useContext(FormContext);
     const ref = useRef<HTMLSelectElement | null>(null);
     useEffect(() => {
         ref.current && setState({ ...state, [props.name]: ref.current.value });
     }, [ref.current])
     return <label className="input">
-        <span className="input-name">{lowercaseIgnoringGroups(stringToSentence(props.name))}</span>
-        <select ref={ref} name={props.name}
+        <span className="input-name">{lowercaseIgnoringGroups(stringToSentence(props.name))}{!props.isOptional && "*"}</span>
+        <select ref={ref}
+            name={props.name}
             value={state[props.name] as string ?? ""}
+            required={props.isOptional && false || true}
             onChange={(e) => setState({ ...state, [props.name]: e.target.value })}
         >
             {props.children}
         </select>
-    </label >
+    </label>
 }
