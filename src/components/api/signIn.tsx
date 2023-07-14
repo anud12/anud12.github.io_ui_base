@@ -1,7 +1,6 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { gapiClientPromise } from "../../service/google/gapiClientPromise";
-import { newApi } from "../../service/impl/newApi";
-import { Button } from "../atoms/Button";
+import React, {useCallback, useEffect, useState} from "react";
+import {newApi} from "../../service/impl/newApi";
+import {Button} from "../atoms/Button";
 
 export const SignIn = () => {
     const [state, setState] = useState<string | undefined>(undefined);
