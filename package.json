@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "esbuild src/index.ts --bundle --platform=node --sourcemap=external --outdir=lib && tsc",
+    "build": "esbuild src/index.ts --bundle --platform=node --sourcemap=external --external:react --external:react-dom --outdir=lib && tsc",
     "dev": "concurrently \"npm:dev-*\"  ",
     "dev-build": "nodemon --ext js,tsx,ts,css --watch ./src src/build.js",
     "dev-server": "live-server --port=8081 --no-css-inject --watch=./**/*.html --watch=./**/*.css --entry-file=./ ./"
