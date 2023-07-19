@@ -1,11 +1,8 @@
-import React, { CSSProperties } from "react";
-import { Page } from "./components/Page";
-import { Header } from "./components/Header";
-import { Comment } from "./components/Comment";
-import { CardContainer } from "./components/Container";
-import { Table } from "./components/Table";
-import { Form } from "./components/Form";
-import { Input, Select } from "./components/atoms/Input";
+import React from "react";
+import {Page} from "./components/Page";
+import {Form} from "./components/Form";
+import {Input, Select} from "./components/atoms/Input";
+
 const time = new Date().toISOString();
 module.exports = (
 

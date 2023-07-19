@@ -8,7 +8,12 @@ module.exports = (
         "--primary": "#70a3c7"
     }}>
         <Link href={"add"}>Add</Link>
-        <Table source="1mcnVFYPtTMt-UV0ZvaXs6R2MfSfcSbsMpKhp4dFW6DE"
+        <Table<any> source="1mcnVFYPtTMt-UV0ZvaXs6R2MfSfcSbsMpKhp4dFW6DE"
+               columnOrder={["actiuni"]}
+               cells={{
+                "nume": () => "gigi",
+                 "actiuni": row => <Link href={`/delete/${row.nume}`}>Mama</Link>
+               }}
             title={
                 <Link href={"add"}>Add</Link>
             } />
