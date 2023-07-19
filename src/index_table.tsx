@@ -10,7 +10,7 @@ module.exports = (
         <Link href={"add"}>Add</Link>
         <Table<any> source="1mcnVFYPtTMt-UV0ZvaXs6R2MfSfcSbsMpKhp4dFW6DE"
                columnOrder={["actiuni"]}
-               cells={{
+               cellValues={{
                 "nume": () => "gigi",
                  "actiuni": row => <Link href={`/delete/${row.nume}`}>Mama</Link>
                }}
