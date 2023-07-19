@@ -1,7 +1,7 @@
 import { arrayToObject } from "../arrayToObjects";
 import { gapiClientPromise } from "./gapiClientPromise";
 
-export const loadFromSheet = (source: string):Promise<Array<any>> => new Promise(async (resolve, reject) => {
+export const loadFromSheet = (source: string):Promise<Array<any>> => new Promise<Array<any>>(async (resolve, reject) => {
     var url = `https://sheets.googleapis.com/v4/spreadsheets/${source}/values/Sheet1`;
     const gapi = await gapiClientPromise;
     var accessToken = gapi.auth.getToken().access_token;
@@ -27,4 +27,4 @@ export const loadFromSheet = (source: string):Promise<Array<any>> => new Promise
         });
 }).catch(e => {
     throw e.result.error;
-})
+}) as any

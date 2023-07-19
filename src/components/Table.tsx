@@ -16,7 +16,8 @@ export const Table = <T extends any>(props: Props<T>) => {
     const data = await loadFromSheet(props.source);
     const changedData = data.map(e => {
       Object.entries(props.cellValues ?? {}).map(([key, value]) => {
-        e[key] = value(e);
+        const func:Function = value as any;
+        e[key] = func(e);
       })
       return e;
     })
@@ -27,7 +28,7 @@ export const Table = <T extends any>(props: Props<T>) => {
     return () => unsubscribe();
   }, [props.source])
 
-  const columns = useMemo(() => {
+  const columns:Array<any> = useMemo(() => {
     const columnSet = new Set();
     props.columnOrder?.map(e => columnSet.add(e));
     Object.keys(data?.[0] ?? {}).map(e => columnSet.add((e)));
