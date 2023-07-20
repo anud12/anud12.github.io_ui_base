@@ -5,7 +5,8 @@ type Props<T> = {
     name: keyof T,
     type?: HTMLInputElement['type'],
     accept?: string,
-    isOptional?: boolean
+    isOptional?: boolean,
+    value?:string,
     capture?: "environment" | "user";
 }
 
@@ -41,6 +42,10 @@ const fileToBase64 = (file: File | undefined) => {
 }
 export const Input = <T extends any>(props: Props<T>) => {
     const { state, setState } = useContext(FormContext);
+    useEffect(() => {
+        props.value ?? setState(props.value);
+    }, [props.value])
+
     const ref = useRef<HTMLInputElement | null>(null);
     useEffect(() => {
         if (props.type !== "file") {
@@ -84,8 +89,11 @@ export const Input = <T extends any>(props: Props<T>) => {
     </label>
 }
 
-export const Select = <T extends any>(props: PropsWithChildren<{ name: string, isOptional?: boolean }>) => {
+export const Select = <T extends any>(props: PropsWithChildren<Omit<Props<T>, "accept" | "type" | "capture">>) => {
     const { state, setState } = useContext(FormContext);
+    useEffect(() => {
+        props.value ?? setState(props.value);
+    }, [props.value])
     const ref = useRef<HTMLSelectElement | null>(null);
     useEffect(() => {
         ref.current && setState({ ...state, [props.name]: ref.current.value });
