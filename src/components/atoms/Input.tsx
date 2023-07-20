@@ -1,8 +1,8 @@
 import React, { PropsWithChildren, useCallback, useContext, useEffect, useMemo, useRef } from "react";
 import { FormContext } from "../Form";
 
-type Props = {
-    name: string,
+type Props<T> = {
+    name: keyof T,
     type?: HTMLInputElement['type'],
     accept?: string,
     isOptional?: boolean
@@ -39,7 +39,7 @@ const fileToBase64 = (file: File | undefined) => {
         }
     })
 }
-export const Input = (props: Props) => {
+export const Input = <T extends any>(props: Props<T>) => {
     const { state, setState } = useContext(FormContext);
     const ref = useRef<HTMLInputElement | null>(null);
     useEffect(() => {
@@ -84,7 +84,7 @@ export const Input = (props: Props) => {
     </label>
 }
 
-export const Select = (props: PropsWithChildren<{ name: string, isOptional: boolean }>) => {
+export const Select = <T extends any>(props: PropsWithChildren<{ name: string, isOptional?: boolean }>) => {
     const { state, setState } = useContext(FormContext);
     const ref = useRef<HTMLSelectElement | null>(null);
     useEffect(() => {
