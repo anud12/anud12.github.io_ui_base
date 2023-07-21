@@ -3,7 +3,6 @@ import {Page} from "./components/Page";
 import {Form} from "./components/Form";
 import {Input, Select} from "./components/atoms/Input";
 
-const time = new Date().toISOString();
 type Obj = {
   "camelCase":"",
   "kebab-case":"",
@@ -11,7 +10,7 @@ type Obj = {
   "snake_case file":"",
   "camelCase demo":"",
 }
-module.exports = (
+export default (
     <Page title="Add boxes">
         <Form folderId="1DwTbUSWf5kzNq84Kc08bJ9Wyw9ijfBuS">
             <Input<Obj> name="camelCase" type="text" />

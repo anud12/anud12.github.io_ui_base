@@ -3,7 +3,7 @@ import { Page } from "./components/Page";
 import { Table } from "./components/Table";
 import { Link } from "./components/atoms/Link";
 import { DividerH } from "./components/DividerH";
-module.exports = (
+export default (
     <Page title="Hello world" theme={{
         "--primary": "#70a3c7"
     }}>
