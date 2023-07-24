@@ -3,14 +3,14 @@ import {loadFromSheet} from "../service/google/loadFromSheet"
 import {newApi} from "../service/impl/newApi"
 import {CardContainer} from "./Container"
 
-type Props<T> = {
+type Props<T, ExtraT> = {
   title?: ReactNode
   source: string,
-  columnOrder?: Array<keyof T>,
-  cellValues?: Record<keyof T, (row: T) => ReactNode>
+  columnOrder?: Array<keyof T | ExtraT>,
+  cellValues?: Record<keyof T | | ExtraT, (row: T) => ReactNode>
 }
 
-export const Table = <T extends any>(props: Props<T>) => {
+export const Table = <T extends any, ExtraT extends any>(props: Props<T, ExtraT>) => {
   const [data, setData] = useState<Array<any>>([]);
   const loadData = async () => {
     const data = await loadFromSheet(props.source);
